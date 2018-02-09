@@ -29,7 +29,7 @@ module.exports = {
   pkg,
   root,
   dirs: directories,
-  dir: name => resolve(directories[name] || name),
+  dir: (name) /*: string */ => resolve(directories[name] || name),
   nodeModules: resolve('node_modules'),
   hasDep,
   hasDevDep,
