@@ -1,0 +1,25 @@
+{
+  "name": "about-this-app",
+  "version": "1.0.0",
+  "description": "Utility functions to query package.json",
+  "author": "Felix Gnass <fgnass@cellular.de>",
+  "repository": "fgnass/about-this-app",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "directories": {
+    "src": "."
+  },
+  "dependencies": {
+    "arrify": "^1.0.1",
+    "lodash": "^4.17.5",
+    "read-pkg-up": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-cellular": "^1.0.0",
+    "jest": "^22.2.1"
+  }
+}
