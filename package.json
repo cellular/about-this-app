@@ -1,6 +1,6 @@
 {
   "name": "about-this-app",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Utility functions to query package.json",
   "author": "Felix Gnass <fgnass@cellular.de>",
   "repository": "fgnass/about-this-app",
