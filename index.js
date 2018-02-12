@@ -6,7 +6,10 @@ const arrify = require('arrify');
 const readPkgUp = require('read-pkg-up');
 const _ = require('lodash');
 
-const { path: packageJson, pkg } = readPkgUp.sync();
+const { path: packageJson, pkg } = readPkgUp.sync({
+  cwd: process.env.INIT_CWD || process.cwd(),
+});
+
 const root = path.dirname(packageJson);
 const resolve = path.resolve.bind(null, root);
 

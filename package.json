@@ -20,6 +20,7 @@
   "devDependencies": {
     "eslint": "^4.17.0",
     "eslint-config-cellular": "^1.0.0",
+    "flow-bin": "^0.65.0",
     "jest": "^22.2.1"
   }
 }
