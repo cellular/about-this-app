@@ -1,5 +1,7 @@
 # about-this-app
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cellular/about-this-app.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/cellular/about-this-app.svg?branch=master)](https://travis-ci.org/cellular/about-this-app)
 
 Utility functions to query a project's package.json file.
