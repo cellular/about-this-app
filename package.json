@@ -13,7 +13,7 @@
     "src": "."
   },
   "dependencies": {
-    "arrify": "^1.0.1",
+    "arrify": "^2.0.1",
     "lodash": "^4.17.5",
     "read-pkg-up": "^3.0.0"
   },
