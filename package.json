@@ -18,7 +18,7 @@
     "read-pkg-up": "^3.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.17.0",
+    "eslint": "^6.6.0",
     "eslint-config-cellular": "^2.0.1",
     "flow-bin": "^0.65.0",
     "jest": "^22.2.1"
