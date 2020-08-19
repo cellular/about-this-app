@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const arrify = require('arrify');
 const readPkgUp = require('read-pkg-up');
-const _ = require('lodash');
 
 const { path: packageJson, pkg } = readPkgUp.sync({
   cwd: process.env.INIT_CWD || process.cwd(),
@@ -13,18 +12,25 @@ const { path: packageJson, pkg } = readPkgUp.sync({
 const root = path.dirname(packageJson);
 const resolve = path.resolve.bind(null, root);
 
+const has = (obj, path) => {
+  // Regex explained: https://regexr.com/58j0k
+  const pathArray = Array.isArray(path) ? path : path.match(/([^[.\]])+/g);
+
+  return !!pathArray.reduce((prevObj, key) => prevObj && prevObj[key], obj);
+};
+
 const hasFile = (f /*: string */) => fs.existsSync(resolve(f));
-const hasPkgProp = props => arrify(props).some(prop => _.has(pkg, prop));
+const hasPkgProp = (props) => arrify(props).some((prop) => has(pkg, prop));
 
 const hasPkgSubProp = (pkgProp /*: string */) => (...props /*: string[] */) =>
-  hasPkgProp(arrify(props).map(p => `${pkgProp}.${p}`));
+  hasPkgProp(arrify(props).map((p) => `${pkgProp}.${p}`));
 
 const hasDep = hasPkgSubProp('dependencies');
 const hasDevDep = hasPkgSubProp('devDependencies');
 const hasPeerDep = hasPkgSubProp('peerDependencies');
 const hasScript = hasPkgSubProp('scripts');
 const hasAnyDep = (...args /*: string[] */) =>
-  [hasDep, hasDevDep, hasPeerDep].some(fn => fn(...args));
+  [hasDep, hasDevDep, hasPeerDep].some((fn) => fn(...args));
 
 const { directories = {} } = pkg;
 
